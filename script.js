@@ -9,12 +9,13 @@ const loadeResults = () => {
 
 loadeResults();
 
-const rollinput = document.getElementById("rollinput");
-const resultOutPut = document.getElementById("resultOutPut");
 
 // SINGLE RESULT FIND HERE
 
-document.getElementById("submit").addEventListener("click", function () {
+const rollinput = document.getElementById("rollinput");
+const resultOutPut = document.getElementById("resultOutPut");
+
+document.getElementById("singleBtn").addEventListener("click", function () {
     const rollNo = parseInt(rollinput.value);
     if (rollinput.value == "") {
         resultOutPut.innerHTML = `<h5>SHOHAG</h5>`
@@ -27,7 +28,84 @@ document.getElementById("submit").addEventListener("click", function () {
     <h5>Roll No: ${singleResult.roll}</h5>
     <h5>GPA: ${singleResult.gpa}</h5>
     `
+    rollinput.value = ""
 });
 
 // SINGLE RESULT FIND CLOSE
 
+
+// STUDENT FILTER HERE
+
+const gpaOutput = document.getElementById("gpaOutput");
+const minG = document.getElementById("min");
+const maxG = document.getElementById("max");
+const total = document.getElementById("total");
+
+document.getElementById("btnMinMax").addEventListener("click", function () {
+    gpaOutput.innerHTML = "";
+    const min = parseFloat(minG.value);
+    const max = parseFloat(maxG.value);
+
+    if (minG.value == "" || maxG.value == "") {
+        gpaOutput.innerHTML = `<h5>Enter Min And Max Value</h5>`
+    }
+    else {
+        i = 0
+        for (const result of results) {
+            if (parseFloat(result.gpa) >= min && parseFloat(result.gpa) <= max) {
+                i++
+                const newDiv = document.createElement("div")
+                newDiv.innerHTML = `<p>Roll No :${result.roll} & GPA: ${result.gpa}</p>`
+                gpaOutput.appendChild(newDiv)
+            }
+            if (1 > min || 4 < max) {
+                gpaOutput.innerHTML = `<h3>Enter Min & Max Between 1 out of 4<h3>`
+            }
+            minG.value = ""
+            maxG.value = ""
+        }
+        total.innerHTML = `Total Student : ${i}`
+    }
+});
+
+// STUDENT FILTER CLOSE
+
+
+
+// COMPARE BETWEEN TO STUDENT HERE
+
+const studentInpOne = document.getElementById("studentInpOne");
+const studentInpTwo = document.getElementById("studentInpTwo");
+const compareOutput = document.getElementById("compareOutput");
+
+document.getElementById("compareBtn").addEventListener("click", function () {
+    const stdInputOne = parseInt(studentInpOne.value);
+    const stdInputTwo = parseInt(studentInpTwo.value);
+
+    for (let result of results) {
+        if (result.roll !== stdInputOne && result.roll !== stdInputTwo) {
+            compareOutput.innerHTML = `<h1>Please Enter Both Roll No crrectly to compare</h1>`
+        }
+        if (stdInputOne == "" || stdInputTwo == "") {
+            compareOutput.innerHTML = `<h1>Please Enter Both Roll No to compare</h1>`
+        }
+    }
+
+    const resultOne = results.find(result => result.roll == stdInputOne);
+    const resultTwo = results.find(result => result.roll == stdInputTwo);
+    const stdOneResult = parseFloat(resultOne.gpa);
+    const stdTwoResult = parseFloat(resultTwo.gpa);
+
+    if (stdOneResult > stdTwoResult) {
+        compareOutput.innerHTML = `<h1>${stdInputOne}(${stdOneResult}) Done ${((25 * stdOneResult).toFixed(2)) - ((25 * stdTwoResult).toFixed(2))}% better Result Then ${stdInputTwo} (${stdTwoResult}) </h1>`
+    }
+    else if (stdOneResult < stdTwoResult) {
+        compareOutput.innerHTML = `<h1>${stdInputTwo} (${stdTwoResult}) Done ${((25 * stdTwoResult).toFixed(2)) - ((25 * stdOneResult).toFixed(2))}% better Result Then ${stdInputOne} (${stdOneResult})</h1>`
+    }
+    else if (stdOneResult == stdTwoResult) {
+        compareOutput.innerHTML = `<h1>${stdInputTwo}(${stdTwoResult}) and ${stdInputOne}(${stdOneResult})Both have same GPA</h1>`
+    }
+
+});
+
+// COMPARE BETWEEN TO STUDENT CLOSE

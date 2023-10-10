@@ -12,40 +12,125 @@
     <section>
         <!-- SINGLE RESULT HERE  -->
 
-        <!-- INPUT HERE  -->
-        <input id="rollinput" type="text" placeholder="Enter Your Roll Number">
-        <!-- INPUT CLOSE  -->
+        <div>
+            <!-- INPUT HERE  -->
+            <input id="rollinput" type="text" placeholder="Enter Your Roll Number">
+            <!-- INPUT CLOSE  -->
 
-        <!-- Button trigger modal -->
-        <button id="submit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
+            <!-- Button trigger modal -->
+            <button id="singleBtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Get Result
+            </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog mt-5">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">RESULT !!!</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog mt-5">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">RESULT !!!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
 
-                    <!-- OUTPUT HERE  -->
-                    <div class="modal-body" id="resultOutPut">
+                        <!-- OUTPUT HERE  -->
+                        <div class="modal-body" id="resultOutPut">
 
-                    </div>
-                    <!-- OUTPUT HERE  -->
+                        </div>
+                        <!-- OUTPUT HERE  -->
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- SINGLE RESULT CLOSE  -->
 
 
 
+
+
+
+
+        <div>
+            <!-- INPUT HERE  -->
+
+            <input type="text" id="min" placeholder="Min GPA">
+            <input type="text" id="max" placeholder="Max GPA">
+
+            <!-- INPUT CLOSE  -->
+
+
+            <!-- Button trigger modal -->
+            <button id="btnMinMax" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Launch static backdrop modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <h5 id="total"></h5>
+                        <div id="gpaOutput" class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- COMPARE BETWEEN TO STUDENT HERE-->
+
+
+        <div>
+            <input type="text" id="studentInpOne">
+            <input type="text" id="studentInpTwo">
+
+            <!-- Button trigger modal -->
+            <button id="compareBtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#compare">
+                SHOHAG
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="compare" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">COMPARE</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="compareOutput" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- COMPARE BETWEEN TO STUDENT CLOSE-->
     </section>
 
 
