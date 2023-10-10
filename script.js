@@ -18,10 +18,10 @@ const resultOutPut = document.getElementById("resultOutPut");
 document.getElementById("singleBtn").addEventListener("click", function () {
     const rollNo = parseInt(rollinput.value);
     if (rollinput.value == "") {
-        resultOutPut.innerHTML = `<h5>SHOHAG</h5>`
+        resultOutPut.innerHTML = `<h5 class="warning">Please Enter A Roll Number.</h5>`
     }
     else {
-        resultOutPut.innerHTML = `<h5>BAPPY</h5>`
+        resultOutPut.innerHTML = `<h5 class="warning">Enter a Valid Roll Number.</h5>`
     }
     const singleResult = results.find(result => result.roll == rollNo)
     resultOutPut.innerHTML = `
@@ -47,7 +47,7 @@ document.getElementById("btnMinMax").addEventListener("click", function () {
     const max = parseFloat(maxG.value);
 
     if (minG.value == "" || maxG.value == "") {
-        gpaOutput.innerHTML = `<h5>Enter Min And Max Value</h5>`
+        gpaOutput.innerHTML = `<h5 class="warning">Enter Min And Max Value</h5>`
     }
     else {
         i = 0
@@ -55,16 +55,17 @@ document.getElementById("btnMinMax").addEventListener("click", function () {
             if (parseFloat(result.gpa) >= min && parseFloat(result.gpa) <= max) {
                 i++
                 const newDiv = document.createElement("div")
-                newDiv.innerHTML = `<p>Roll No :${result.roll} & GPA: ${result.gpa}</p>`
+                newDiv.innerHTML = `<h5>Roll No :${result.roll} & GPA: ${result.gpa}</h5>`
                 gpaOutput.appendChild(newDiv)
             }
             if (1 > min || 4 < max) {
-                gpaOutput.innerHTML = `<h3>Enter Min & Max Between 1 out of 4<h3>`
+                gpaOutput.innerHTML = `<h5 class="warning">Enter Min & Max Between 1 out of 4<h5>`
             }
-            minG.value = ""
-            maxG.value = ""
+
         }
         total.innerHTML = `Total Student : ${i}`
+        minG.value = ""
+        maxG.value = ""
     }
 });
 
@@ -84,10 +85,10 @@ document.getElementById("compareBtn").addEventListener("click", function () {
 
     for (let result of results) {
         if (result.roll !== stdInputOne && result.roll !== stdInputTwo) {
-            compareOutput.innerHTML = `<h1>Please Enter Both Roll No crrectly to compare</h1>`
+            compareOutput.innerHTML = `<h5 class="warning">Please Enter Both Roll No crrectly to compare</h5>`
         }
         if (stdInputOne == "" || stdInputTwo == "") {
-            compareOutput.innerHTML = `<h1>Please Enter Both Roll No to compare</h1>`
+            compareOutput.innerHTML = `<h5 class="warning">Please Enter Both Roll No to compare</h5>`
         }
     }
 
@@ -97,15 +98,14 @@ document.getElementById("compareBtn").addEventListener("click", function () {
     const stdTwoResult = parseFloat(resultTwo.gpa);
 
     if (stdOneResult > stdTwoResult) {
-        compareOutput.innerHTML = `<h1>${stdInputOne}(${stdOneResult}) Done ${((25 * stdOneResult).toFixed(2)) - ((25 * stdTwoResult).toFixed(2))}% better Result Then ${stdInputTwo} (${stdTwoResult}) </h1>`
+        compareOutput.innerHTML = `<h5>${stdInputOne}(${stdOneResult}) Done ${((25 * stdOneResult).toFixed(2)) - ((25 * stdTwoResult).toFixed(2))}% better Result Then ${stdInputTwo} (${stdTwoResult}) </h5>`
     }
     else if (stdOneResult < stdTwoResult) {
-        compareOutput.innerHTML = `<h1>${stdInputTwo} (${stdTwoResult}) Done ${((25 * stdTwoResult).toFixed(2)) - ((25 * stdOneResult).toFixed(2))}% better Result Then ${stdInputOne} (${stdOneResult})</h1>`
+        compareOutput.innerHTML = `<h5>${stdInputTwo} (${stdTwoResult}) Done ${((25 * stdTwoResult).toFixed(2)) - ((25 * stdOneResult).toFixed(2))}% better Result Then ${stdInputOne} (${stdOneResult})</h5>`
     }
     else if (stdOneResult == stdTwoResult) {
-        compareOutput.innerHTML = `<h1>${stdInputTwo}(${stdTwoResult}) and ${stdInputOne}(${stdOneResult})Both have same GPA</h1>`
+        compareOutput.innerHTML = `<h5>${stdInputTwo}(${stdTwoResult}) and ${stdInputOne}(${stdOneResult})Both have same GPA</h5>`
     }
-
 });
 
 // COMPARE BETWEEN TO STUDENT CLOSE

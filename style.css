@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 51);
+}
+
+.intro {
+    color: white;
+    padding: 30px 0px;
+}
+
+.inputBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0px 120px;
+}
+
+.head {
+    color: white;
+}
+
+.getResult {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px 0px 10px gray;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.findResult {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px 0px 10px gray;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inputBoxTwo {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.compareResult {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 0px 10px gray;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.getBtn {
+    padding: 5px 0px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+}
+
+.getBtn:hover {
+    background-color: rgb(255, 77, 77);
+}
+
+input {
+    padding: 4px 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid green;
+    width: 100%;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.findInp {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.closeBtn {
+    background-color: rgb(255, 77, 77);
+    color: white;
+    font-weight: bolder;
+    border: none;
+    padding: 5px 0px;
+    width: 100%;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.closeBtn:hover {
+    background-color: green;
+}
+
+.warning {
+    color: red;
+}
+
+.modalHead {
+    color: green;
+    width: 100%;
+    text-align: center;
+}
