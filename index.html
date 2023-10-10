@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <!-- SINGLE RESULT & FIND RESULT CLOSE -->
+
     <section>
         <!-- SINGLE RESULT HERE  -->
 
@@ -22,7 +24,6 @@
                 data-bs-target="#exampleModal">
                 Get Result
             </button>
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -32,12 +33,10 @@
                             <h1 class="modal-title fs-5" id="exampleModalLabel">RESULT !!!</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-
                         <!-- OUTPUT HERE  -->
                         <div class="modal-body" id="resultOutPut">
-
                         </div>
-                        <!-- OUTPUT HERE  -->
+                        <!-- OUTPUT CLOSE  -->
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -49,27 +48,19 @@
 
         <!-- SINGLE RESULT CLOSE  -->
 
-
-
-
-
-
+        <!-- FIND RESULT HERE  -->
 
         <div>
             <!-- INPUT HERE  -->
-
             <input type="text" id="min" placeholder="Min GPA">
             <input type="text" id="max" placeholder="Max GPA">
-
             <!-- INPUT CLOSE  -->
-
 
             <!-- Button trigger modal -->
             <button id="btnMinMax" type="button" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">
                 Launch static backdrop modal
             </button>
-
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -80,8 +71,11 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <h5 id="total"></h5>
+                        <!-- OUTPUT HERE  -->
                         <div id="gpaOutput" class="modal-body">
+
                         </div>
+                        <!-- OUTPUT CLOSE  -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
@@ -90,23 +84,25 @@
             </div>
         </div>
 
+        <!-- FIND RESULT HERE  -->
+    </section>
 
+    <!-- SINGLE RESULT & FIND RESULT CLOSE -->
 
+    <!-- COMPARE BETWEEN TO STUDENT HERE-->
 
-
-        <!-- COMPARE BETWEEN TO STUDENT HERE-->
-
-
+    <section>
         <div>
+            <!-- INPUT HERE -->
             <input type="text" id="studentInpOne">
             <input type="text" id="studentInpTwo">
+            <!-- INPUT CLOSE -->
 
-            <!-- Button trigger modal -->
+            <!-- Button trigger modal HERE -->
             <button id="compareBtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#compare">
                 SHOHAG
             </button>
-
             <!-- Modal -->
             <div class="modal fade" id="compare" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -116,34 +112,21 @@
                             <h1 class="modal-title fs-5" id="staticBackdropLabel">COMPARE</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <!-- OUTPUT HERE  -->
                         <div id="compareOutput" class="modal-body">
 
                         </div>
+                        <!-- OUTPUT CLOSE  -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-
-        <!-- COMPARE BETWEEN TO STUDENT CLOSE-->
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
+    <!-- COMPARE BETWEEN TO STUDENT CLOSE-->
 
     <script src="script.js"></script>
     <script src="./bootstrap.bundle.min.js"></script>
